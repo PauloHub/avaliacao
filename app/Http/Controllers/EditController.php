@@ -103,7 +103,7 @@ class EditController extends Controller
      */
     public function destroy($id)
     {
-        DB::table('users')->where('id',$id)->update(['created_at' => null]);
+        DB::table('users')->where('id',$id)->update(['deleted_at' => date('Y-m-d H:i:s')]);
         Auth::logout();
         return redirect()->route('login');
     }
