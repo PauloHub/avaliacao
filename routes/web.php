@@ -14,3 +14,17 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+Route::post('/home', 'HomeController@store')->name('home');
+
+Route::get('/edit/{id}', 'EditController@index')->name('edit');
+Route::post('/edit', 'EditController@update')->name('edit');
+Route::get('/delete/{id}', 'EditController@destroy')->name('delete');
+
+
+
+
+
